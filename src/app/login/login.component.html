@@ -8,10 +8,10 @@
     <h6>{{aim}}</h6>
 </div>
 <form class="p-3 mt-4 name">
-        <input #acno type="text" name="acno" id="login_acno" class="form-control" [placeholder]="account"><br>
-        <input #pswd type="password" name="password" id="login_pswd" class="form-control" placeholder="Password"><br>
+        <input [(ngModel)]="acno" type="text" name="acno" id="login_acno" class="form-control" [placeholder]="account"><br>
+        <input [(ngModel)]="pswd" type="password" name="password" id="login_pswd" class="form-control" placeholder="Password"><br>
     <div>
-        <button class="btn mt-3 btn btn-primary" (click)="login(acno,pswd)" type="button">Login</button><br>
+        <button class="btn mt-3 btn btn-primary" (click)="login()" type="button">Login</button><br>
         </div>
 </form>
 <div class="text-center fs-7 mt-3">

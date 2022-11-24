@@ -49,32 +49,10 @@ userDetails:any={
     console.log(this.pswd);
     
   }
-  // login(){
-  //   // alert('login clicked');
-  //   var acno=this.acno;
-  //   var pswd=this.pswd;
-  //   var userDetails=this.userDetails;
-
-  //   if(acno in userDetails){
-  //     if(pswd==userDetails[acno]['password']){
-  //       alert('login successful');
-
-  //     }
-  //     else{
-  //       alert('invalid password');
-  //     }
-
-  //   }
-  //   else{
-  //     alert('invalid user details');
-  //   }
-  // }
-
-
-  login(a:any,p:any){
+  login(){
     // alert('login clicked');
-    var acno=a.value;
-    var pswd=p.value;
+    var acno=this.acno;
+    var pswd=this.pswd;
     var userDetails=this.userDetails;
 
     if(acno in userDetails){
@@ -91,4 +69,26 @@ userDetails:any={
       alert('invalid user details');
     }
   }
+
+
+  // login(a:any,p:any){
+  //   // alert('login clicked');
+  //   var acno=a.value;
+  //   var pswd=p.value;
+  //   var userDetails=this.userDetails;
+
+  //   if(acno in userDetails){
+  //     if(pswd==userDetails[acno]['password']){
+  //       alert('login successful');
+
+  //     }
+  //     else{
+  //       alert('invalid password');
+  //     }
+
+  //   }
+  //   else{
+  //     alert('invalid user details');
+  //   }
+  // }
 }

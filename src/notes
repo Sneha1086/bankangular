@@ -33,4 +33,21 @@ data sharing only one direction
            b)Event binding using $event-(event)="function_name($event)"  
            c)Event binding using  template referenceing variable - #variable_name 
 2)Two way data binding
-Data  sharing in both direction(ts->html html->ts)      
+Data  sharing in both direction(ts->html html->ts)
+
+      i)ngModel binding - import formsModule in app.module.ts
+     
+      [(ngModel)]="property_name"
+
+
+Angular Routing
+
+To set path for component
+
+{
+      path:value,component:component_name
+},
+login
+{
+      path:'',component:LoginComponent
+}
