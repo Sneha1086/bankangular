@@ -1,0 +1,20 @@
+<div class="col-4 container border border-2 border-dark mt-3 w-25 p-4 text-center" >
+    <img src="../../assets/png-clipart-white-bank-illustration-online-banking-finance-icon-white-bank-building-building-black-white.png"
+        alt="" width="100px" height="25%">
+
+<div class="text-center mt-4 name">
+    My Bank
+    <!-- string interpolation -->
+    <h6>{{aim}}</h6>
+</div>
+<form class="p-3 mt-4 name">
+        <input #acno type="text" name="acno" id="login_acno" class="form-control" [placeholder]="account"><br>
+        <input #pswd type="password" name="password" id="login_pswd" class="form-control" placeholder="Password"><br>
+    <div>
+        <button class="btn mt-3 btn btn-primary" (click)="login(acno,pswd)" type="button">Login</button><br>
+        </div>
+</form>
+<div class="text-center fs-7 mt-3">
+    <a href="">Forgot password</a> Or <a href="./signup.html">Sign up</a>
+</div>
+</div>
