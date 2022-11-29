@@ -1,1 +1,47 @@
-<p>dashboard works!</p>
+<div class="parent">
+  <h1>welcome{{user}}</h1>
+  <a routerLink="/transaction">Transaction history</a>
+<div class="col-4 container border border-2 border-dark mt-3 w-25 p-4 text-center" >
+    <img src="../../assets/png-clipart-white-bank-illustration-online-banking-finance-icon-white-bank-building-building-black-white.png"
+        alt="" width="100px" height="15%">
+
+<div class="text-center mt-4 name">
+  <h2>Deposite</h2>
+</div>
+<form class="p-3 mt-4 name">
+        <input [(ngModel)]="acno" type="text" name="acno" id="depo_acno" class="form-control" placeholder="Account number"><br>
+        <input [(ngModel)]="pswd" type="password" name="password" id="depo_pswd" class="form-control" placeholder="Password"><br>
+        <input [(ngModel)]="amount" type="text" name="amount" id="depo_name" class="form-control" placeholder="amount"><br>
+
+    <div>
+        <button class="btn mt-3 btn btn-primary" (click)="deposite()" type="button">deposite</button><br>
+        </div>
+</form>
+<div class="text-center fs-7 mt-3">
+   <a routerLink="">Sign in</a>
+</div>
+</div>
+
+
+
+<div class="col-4 container border border-2 border-dark mt-3 w-25 p-4 text-center" >
+    <img src="../../assets/png-clipart-white-bank-illustration-online-banking-finance-icon-white-bank-building-building-black-white.png"
+        alt="" width="100px" height="15%">
+
+<div class="text-center mt-4 name">
+  <h2>Withdraw</h2>
+</div>
+<form class="p-3 mt-4 name">
+        <input [(ngModel)]="acno1" type="text" name="acno" id="with_acno" class="form-control" placeholder="Account number"><br>
+        <input [(ngModel)]="pswd1" type="password" name="password" id="with_pswd" class="form-control" placeholder="Password"><br>
+        <input [(ngModel)]="amount1" type="text" name="amount" id="with_name" class="form-control" placeholder="amount"><br>
+
+    <div>
+        <button class="btn mt-3 btn btn-primary" (click)="withdraw()" type="button">withdraw</button><br>
+        </div>
+</form>
+<div class="text-center fs-7 mt-3">
+   <a routerLink="">Sign in</a>
+</div>
+</div>
+</div>

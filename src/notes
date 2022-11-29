@@ -50,4 +50,34 @@ To set path for component
 login
 {
       path:'',component:LoginComponent
-}
+},
+
+
+
+3)Angular services
+
+To hold redundant data 
+
+To create new service - ng g s service_name
+
+4)Dependency injection
+
+To share data between dependand classes
+
+constructor(private ds:Dataservice)
+ 
+
+5) angular directives to manipulate DOM
+
+a)COMPONENT DIRECTIVS(ARRAY)
+b)STRUCTURAL DIARECTIVES(TABLES)
+   ->*ngFor
+
+6)Angular forms
+
+a)Template driven forms(first design the html page)
+b)Model driven forms(first design model in ts file)
+      1)Reactive forms
+      fromGroup,array,control
+      for advanced validation
+      import from reactive forms modules(in app.module.ts)

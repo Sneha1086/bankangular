@@ -5,15 +5,15 @@
 <div class="text-center mt-4 name">
   <h2>My Bank</h2>
 </div>
-<form class="p-3 mt-4 name">
-        <input type="text" name="username" id="reg_name" class="form-control" placeholder="Username"><br>
-        <input type="text" name="acno" id="reg_acno" class="form-control" placeholder="Account number"><br>
-        <input type="password" name="password" id="reg_pswd" class="form-control" placeholder="Password"><br>
+<form [formGroup]="registerForm" class="p-3 mt-4 name">
+        <input formControlName="uname" type="text" name="username" id="reg_name" class="form-control" placeholder="Username"><br>
+        <input formControlName="acno" type="text" name="acno" id="reg_acno" class="form-control" placeholder="Account number"><br>
+        <input formControlName="pswd" type="password" name="password" id="reg_pswd" class="form-control" placeholder="Password"><br>
     <div>
-        <button class="btn mt-3 btn btn-primary" onclick="register()" type="button">Register</button><br>
+        <button class="btn mt-3 btn btn-primary" (click)="register()" type="button">Register</button><br>
         </div>
 </form>
 <div class="text-center fs-7 mt-3">
-   <a href="./index.html">Sign in</a>
+   <a routerLink="">Sign in</a>
 </div>
 </div>
