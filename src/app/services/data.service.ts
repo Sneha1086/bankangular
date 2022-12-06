@@ -1,4 +1,4 @@
-// import {transition} from '@angular/animations';
+import {transition} from '@angular/animations';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -14,7 +14,41 @@ currentAcno="";
 
 
 
-  constructor() { }
+  constructor() { 
+    this.getDetails();
+  }
+//save daetails - to save data to the local storage
+saveDetails(){
+  if(this.userDetails){
+  //DATABASE
+  localStorage.setItem('Database',JSON.stringify(this.userDetails))
+  }
+
+  if(this.currentUser){
+  //currentUser
+  localStorage.setItem('currentUser',JSON.stringify(this.currentUser))
+  }
+
+  if(this.currentAcno){
+  //currentAcno
+  localStorage.setItem('currentAcno',JSON.stringify(this.currentAcno))
+  }
+
+} 
+
+getDetails(){
+  if (localStorage.getItem('Database')) {
+    this.userDetails = JSON.parse(localStorage.getItem('Database') || '');
+  }
+  if (localStorage.getItem('currentUser')) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
+  }
+  if (localStorage.getItem('currentAcno')) {
+    this.currentAcno = JSON.parse(localStorage.getItem('currentAcno') || '');
+  }
+}
+
+
   //data base
 userDetails:any={
   1000:{acno:1000,username:"Amal",password:1000,balance:3000,transaction:[]},
@@ -38,11 +72,14 @@ userDetails:any={
 
       
     }
+    this.saveDetails();
     console.log(userDetails);
     
     return true
   }
 }
+
+
 login(acno:any,pswd:any){
 
   let userDetails=this.userDetails;
@@ -50,6 +87,7 @@ login(acno:any,pswd:any){
     if(pswd=userDetails[acno]['password']){
       this.currentUser=userDetails[acno]['username']
       this.currentAcno=acno;
+      this.saveDetails();
       return true;
     }
     else{
@@ -74,6 +112,7 @@ if(pswd==userDetails[acno]['password']){
       Amount:amount
     }
   )
+  this.saveDetails();
   console.log(userDetails);
   
   return userDetails[acno]['balance']
@@ -103,6 +142,7 @@ if(acno in userDetails){
         Amount:amount
       }
     )
+    this.saveDetails();
     console.log(userDetails);
     return userDetails[acno]['balance']
   }else{

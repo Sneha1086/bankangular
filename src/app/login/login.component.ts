@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -17,13 +18,23 @@ account="Enter your account here";
 
 acno='';
 pswd='';
+// ds: any;
+// fb: any;
+
+
 
 //functions/methods - user defined functions //(4th execute)
 //dependency injection
-  constructor(private ds:DataService,private router:Router){ //(1st execute)
+  constructor(private fb:FormBuilder,private ds:DataService,private router:Router){ //(1st execute)
     //it automatically invokes when the object is created
     //object initialization
   }
+
+  loginForm = this.fb.group({
+    acno:['',[Validators.required,Validators.pattern('[0-9]*')]],
+    pswd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]*')]]
+
+  })
 
   ngOnInit(): void {//(2nd execute)
     //its a life cycle hooks of angular
@@ -45,19 +56,27 @@ pswd='';
   }
   login(){
     // alert('login clicked');
-    var acno=this.acno;
-    var pswd=this.pswd;
+    var acno=this.loginForm.value.acno;
+    var pswd=this.loginForm.value.pswd;
     var userDetails=this.ds.userDetails;
-    const result=this.ds.login(acno,pswd)
+    if(this.loginForm.valid){
+
+    const result=this.ds.login(acno,pswd);
     if(result){
       alert('login successful');
        this.router.navigateByUrl('dashboard')
     }
-    else{
+    else
+    {
       alert('login failed')
     }
   }
+  else{
+      alert('invalid form')
+    }
+  }
 }
+
 
 
 

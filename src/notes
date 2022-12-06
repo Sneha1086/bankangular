@@ -81,3 +81,16 @@ b)Model driven forms(first design model in ts file)
       fromGroup,array,control
       for advanced validation
       import from reactive forms modules(in app.module.ts)
+
+7)Local storage
+       -setItem - To store data in local storage
+       -getItem - To get data from local storage
+       -removeItem - To remove data from local storage
+
+8) Parent child communication
+      parent -> child communication
+      child ->parent communication
+
+      eg:
+      dashboard -> parent -@Input
+      delete -> child -@output       
